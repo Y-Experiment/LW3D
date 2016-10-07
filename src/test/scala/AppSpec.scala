@@ -10,7 +10,7 @@ class AppSpec extends FeatureSpec with GivenWhenThen {
     scenario("can be instantiated") {
       Given("a default location app.Main for the app")
       When("the class is instantiated")
-      val application = new app.Main()
+      val application = new app.Main(true)
       Then("the object should be instantiated")
       assert(application.isInstanceOf[app.Main])
     }

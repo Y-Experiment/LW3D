@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016. All rights reserved by Andrzej Tuchołka (andrzej@certo.co)
+ * Copyright (c) 2016. Y Experiment (yexperiment.com) MIT License
  */
 
 object Build extends sbt.Build {

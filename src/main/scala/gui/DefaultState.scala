@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016. All rights reserved by Andrzej Tuchołka (andrzej@certo.co)
+ * Copyright (c) 2016. Y Experiment (yexperiment.com) MIT License
  */
 
 package gui
@@ -17,7 +17,9 @@ abstract class DefaultState(parentNode: Node) extends AppState {
   protected var rootNode: Node = _
 
   def onInit(stateManager: AppStateManager, app: Application)
+
   def onUpdate(tpf: Float)
+
   def onClean()
 
   def initialize(stateManager: AppStateManager, app: Application) = {
@@ -29,9 +31,9 @@ abstract class DefaultState(parentNode: Node) extends AppState {
 
   def isInitialized: Boolean = initialized
 
-  def setEnabled(value: Boolean) = enabled = value
-
   def isEnabled: Boolean = enabled
+
+  def setEnabled(value: Boolean) = enabled = value
 
   def stateAttached(stateManager: AppStateManager) = {
     parentNode.attachChild(rootNode)

@@ -18,7 +18,7 @@ trait Settings {
     , ("StencilBits", 0)
     , ("Samples", 2)
     , ("Fullscreen", false)
-    , ("Title", "Gomplex 3D")
+    , ("Title", "LW3D")
     , ("Renderer", com.jme3.system.AppSettings.LWJGL_OPENGL2)
     , ("AudioRenderer", com.jme3.system.AppSettings.LWJGL_OPENAL)
     , ("DisableJoysticks", true)

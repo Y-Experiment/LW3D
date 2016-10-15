@@ -2,7 +2,7 @@
  * Copyright (c) 2016. Y Experiment (yexperiment.com) MIT License
  */
 
-package gui
+package states
 
 import com.jme3.app.Application
 import com.jme3.app.state.{AppState, AppStateManager}
@@ -14,7 +14,7 @@ abstract class DefaultState(parentNode: Node) extends AppState {
   protected var initialized = false
   protected var enabled = false
 
-  protected var rootNode: Node = _
+  protected lazy val rootNode: Node = new Node(getClass.getName)
 
   def onInit(stateManager: AppStateManager, app: Application)
 
@@ -23,7 +23,6 @@ abstract class DefaultState(parentNode: Node) extends AppState {
   def onClean()
 
   def initialize(stateManager: AppStateManager, app: Application) = {
-    rootNode = new Node(getClass.getName)
     onInit(stateManager, app)
 
     initialized = true
@@ -43,7 +42,7 @@ abstract class DefaultState(parentNode: Node) extends AppState {
     parentNode.detachChild(rootNode)
   }
 
-  def update(tpf: Float) = if (enabled) {
+  def update(tpf: Float) = {
     onUpdate(tpf)
   }
 

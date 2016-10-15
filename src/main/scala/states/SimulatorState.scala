@@ -1,14 +1,13 @@
 /*
  * Copyright (c) 2016. Y Experiment (yexperiment.com) MIT License
  */
-
-package gui
+package states
 
 import com.jme3.app.Application
 import com.jme3.app.state.AppStateManager
 import com.jme3.scene.Node
 
-class GuiState(parentNode: Node) extends DefaultState(parentNode) {
+class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 
   def onInit(stateManager: AppStateManager, app: Application) = {
 
@@ -21,5 +20,4 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
   def onClean() = {
 
   }
-
 }

@@ -24,7 +24,7 @@ trait Settings {
     , ("DisableJoysticks", true)
     , ("UseInput", true)
     , ("VSync", false)
-    , ("FrameRate", 120)
+    , ("FrameRate", 0)
     , ("SettingsDialogImage", "")
     , ("MinHeight", 1920)
     , ("MinWidth", 1080)
@@ -45,7 +45,7 @@ trait Settings {
   setSettings(appSettings)
 
   setShowSettings(false)
-  setDisplayFps(false)
+  setDisplayFps(true)
   setDisplayStatView(false)
   setPauseOnLostFocus(false)
 }

@@ -7,7 +7,7 @@ package states
 import com.jme3.app.Application
 import com.jme3.app.state.{AppState, AppStateManager}
 import com.jme3.renderer.RenderManager
-import com.jme3.scene.Node
+import com.jme3.scene.{Node, SceneGraphVisitor, Spatial}
 
 abstract class DefaultState(parentNode: Node) extends AppState {
 
@@ -16,11 +16,13 @@ abstract class DefaultState(parentNode: Node) extends AppState {
   protected var initialized = false
   protected var enabled = false
 
-  protected lazy val rootNode: Node = new Node(getClass.getName)
+  private lazy val rootNode = new Node(getClass.getName)
+  protected val rootNodeList = List[Node]()
+
 
   def onInit(stateManager: AppStateManager, app: Application)
 
-  def onUpdate(tpf: Float)
+  def onUpdate(node: Node, tpf: Float)
 
   def onClean()
 
@@ -44,9 +46,7 @@ abstract class DefaultState(parentNode: Node) extends AppState {
     parentNode.detachChild(rootNode)
   }
 
-  def update(tpf: Float) = {
-    onUpdate(tpf)
-  }
+  def update(tpf: Float) = rootNodeList.foreach(onUpdate(_, tpf))
 
   def render(renderManager: RenderManager) = {}
 

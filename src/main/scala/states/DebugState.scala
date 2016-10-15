@@ -14,7 +14,7 @@ class DebugState(parentGuiNode: Node, parentRootNode: Node) extends DefaultState
 
   }
 
-  def onUpdate(tpf: Float) = {
+  def onUpdate(node: Node, tpf: Float) = {
 
   }
 
@@ -22,7 +22,7 @@ class DebugState(parentGuiNode: Node, parentRootNode: Node) extends DefaultState
 
   }
 
-  protected lazy val guiNode: Node = new Node(getClass.getName)
+  private lazy val guiNode: Node = new Node(getClass.getName)
 
   override def initialize(stateManager: AppStateManager, app: Application) = {
     super.initialize(stateManager, app)

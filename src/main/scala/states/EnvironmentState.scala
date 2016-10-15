@@ -14,7 +14,7 @@ class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
 
   }
 
-  def onUpdate(tpf: Float) = {
+  def onUpdate(node: Node, tpf: Float) = {
 
   }
 

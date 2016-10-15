@@ -9,6 +9,14 @@ import com.jme3.scene.Node
 
 class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 
+  def onAdd(node: Node) = {
+
+  }
+
+  def onDel(node: Node) = {
+
+  }
+
   def onInit(stateManager: AppStateManager, app: Application) = {
 
   }

@@ -12,7 +12,7 @@ class Main(headless: Boolean = false) extends com.jme3.app.SimpleApplication wit
 
   lazy val guiState = new GuiState(guiNode)
 
-  lazy val debugState = new DebugState(guiNode, rootNode)
+  lazy val debugState = new DebugState(rootNode)
   lazy val environmentState = new EnvironmentState(rootNode)
   lazy val simulatorState = new SimulatorState(rootNode)
   lazy val sfxState = new SfxState(rootNode)

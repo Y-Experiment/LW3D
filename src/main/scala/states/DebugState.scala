@@ -8,7 +8,15 @@ import com.jme3.app.Application
 import com.jme3.app.state.AppStateManager
 import com.jme3.scene.Node
 
-class DebugState(parentGuiNode: Node, parentRootNode: Node) extends DefaultState(parentRootNode) {
+class DebugState(parentNode: Node) extends DefaultState(parentNode) {
+
+  def onAdd(node: Node) = {
+
+  }
+
+  def onDel(node: Node) = {
+
+  }
 
   def onInit(stateManager: AppStateManager, app: Application) = {
 
@@ -20,21 +28,5 @@ class DebugState(parentGuiNode: Node, parentRootNode: Node) extends DefaultState
 
   def onClean() = {
 
-  }
-
-  private lazy val guiNode: Node = new Node(getClass.getName)
-
-  override def initialize(stateManager: AppStateManager, app: Application) = {
-    super.initialize(stateManager, app)
-  }
-
-  override def stateAttached(stateManager: AppStateManager) = {
-    parentGuiNode.attachChild(guiNode)
-    super.stateAttached(stateManager)
-  }
-
-  override def stateDetached(stateManager: AppStateManager) = {
-    parentGuiNode.detachChild(guiNode)
-    super.stateDetached(stateManager)
   }
 }

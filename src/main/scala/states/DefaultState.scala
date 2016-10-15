@@ -11,6 +11,8 @@ import com.jme3.scene.Node
 
 abstract class DefaultState(parentNode: Node) extends AppState {
 
+  protected lazy val logger = java.util.logging.Logger.getLogger(getClass.getName)
+
   protected var initialized = false
   protected var enabled = false
 

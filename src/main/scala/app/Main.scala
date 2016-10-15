@@ -8,7 +8,7 @@ import states._
 
 class Main(headless: Boolean = false) extends com.jme3.app.SimpleApplication with Settings {
 
-  private lazy val logger = org.slf4j.LoggerFactory.getLogger(getClass.getName)
+  private lazy val logger = java.util.logging.Logger.getLogger(getClass.getName)
 
   lazy val guiState = new GuiState(guiNode)
 

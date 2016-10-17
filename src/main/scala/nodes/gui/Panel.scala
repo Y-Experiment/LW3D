@@ -18,7 +18,7 @@ class Panel(app: Application,
             width: Float = 100,
             height: Float = 100,
             position: Vector3f = Vector3f.ZERO,
-            color: ColorRGBA = ColorPalette.SECOND_DARK) extends Node(name) {
+            color: ColorRGBA = ColorPalette.SecondDark) extends Node(name) {
   attachChild(
     new Geometry("QuadOf"+getName, new Quad(width, height)) {
       setMaterial(

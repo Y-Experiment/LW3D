@@ -4,9 +4,10 @@
 
 Website: http://lw3d.yexperiment.com
 
-Lightweight 3D app template building on top of the configuration of:
-* SBT - http://www.scala-sbt.org
+Lightweight 3D app template building on top of:
 * JME3 - http://jmonkeyengine.org
-* AngelCode's Bitmap Font Generator - http://www.angelcode.com/products/bmfont/
-* scalatest - http://www.scalatest.org
 
+Using tools:
+* AngelCode's Bitmap Font Generator - http://www.angelcode.com/products/bmfont/
+* SBT - http://www.scala-sbt.org
+* scalatest - http://www.scalatest.org

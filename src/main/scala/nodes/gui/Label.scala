@@ -15,7 +15,7 @@ class Label(app: Application
             , name: String = "label"
             , text: String = ""
             , size: Float = 64
-            , color: ColorRGBA = ColorPalette.MAIN_BRIGHT
+            , color: ColorRGBA = ColorPalette.MainBright
             , position: Vector3f = Vector3f.ZERO
             , rotation: Quaternion = Quaternion.DIRECTION_Z
            ) extends Node(name) {

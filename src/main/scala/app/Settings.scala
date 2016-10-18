@@ -4,6 +4,8 @@
 
 package app
 
+import javax.imageio.ImageIO
+
 trait Settings {
   this: com.jme3.app.SimpleApplication =>
 
@@ -30,9 +32,7 @@ trait Settings {
     , ("MinWidth", 1080)
   ) foreach { case (k, v: Object) => appSettings.put(k, v) }
 
-  appSettings.setIcons({
-    import javax.imageio.ImageIO
-
+  appSettings.setIcons(
     List(
       ImageIO.read(getClass.getClassLoader.getResource("Yx/logo/Y256.png")),
       ImageIO.read(getClass.getClassLoader.getResource("Yx/logo/Y128.png")),
@@ -40,7 +40,7 @@ trait Settings {
       ImageIO.read(getClass.getClassLoader.getResource("Yx/logo/Y32.png")),
       ImageIO.read(getClass.getClassLoader.getResource("Yx/logo/Y16.png"))
     ).toArray
-  })
+  )
 
   setSettings(appSettings)
 

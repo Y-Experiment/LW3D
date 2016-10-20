@@ -9,7 +9,11 @@ Lightweight 3D app template building on top of:
 
 Using tools:
 * AngelCode's Bitmap Font Generator - http://www.angelcode.com/products/bmfont/
+* Spacescape - https://sourceforge.net/projects/spacescape/
+
+Supported by:
 * SBT - http://www.scala-sbt.org
 * scalatest - http://www.scalatest.org
 * travis CI - https://travis-ci.org
 * codacy - http://www.codacy.com
+

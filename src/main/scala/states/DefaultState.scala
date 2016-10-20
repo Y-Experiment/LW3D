@@ -20,7 +20,7 @@ abstract class DefaultState(parentNode: Node) extends AppState {
 
   protected var app: Application = _
 
-  private lazy val rootNode = new Node(getClass.getName)
+  protected lazy val rootNode = new Node(getClass.getName)
   private var nodes = Map[String, Node]()
 
   def onInit(stateManager: AppStateManager, app: Application)

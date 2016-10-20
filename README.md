@@ -11,3 +11,5 @@ Using tools:
 * AngelCode's Bitmap Font Generator - http://www.angelcode.com/products/bmfont/
 * SBT - http://www.scala-sbt.org
 * scalatest - http://www.scalatest.org
+* travis CI - https://travis-ci.org
+* codacy - http://www.codacy.com

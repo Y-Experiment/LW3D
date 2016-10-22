@@ -4,6 +4,10 @@
 
 package app
 
+import com.jme3.input.controls.{KeyTrigger, MouseButtonTrigger}
+import com.jme3.math.FastMath
+import com.jme3.post.FilterPostProcessor
+import com.jme3.post.filters.BloomFilter
 import states._
 
 class Main(headless: Boolean = false) extends com.jme3.app.SimpleApplication with Settings {
@@ -23,6 +27,12 @@ class Main(headless: Boolean = false) extends com.jme3.app.SimpleApplication wit
 
   def simpleInitApp() = {
     flyCam.setEnabled(false)
+
+    val processor = new FilterPostProcessor(assetManager)
+    val bf: BloomFilter = new BloomFilter(BloomFilter.GlowMode.Objects)
+    processor.addFilter(bf)
+    viewPort.addProcessor(processor)
+
     stateManager.attachAll(debugState, guiState, environmentState, simulatorState, sfxState)
   }
 }

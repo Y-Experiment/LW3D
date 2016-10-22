@@ -15,9 +15,9 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
   override protected lazy val startNodes: Seq[Node] = {
     Seq(
       new Panel(app
-        , width = app.getViewPort.getCamera.getWidth / 2
-        , height = app.getViewPort.getCamera.getHeight / 2
-        , position = new Vector3f(app.getViewPort.getCamera.getWidth * .25f, app.getViewPort.getCamera.getHeight * .25f, -2f)
+        , width = app.getViewPort.getCamera.getWidth
+        , height = app.getViewPort.getCamera.getHeight / 12
+        , position = new Vector3f(0, app.getViewPort.getCamera.getHeight * 11/12, -2f)
       ),
       new Button(app) {
         override def onClick = {
@@ -25,14 +25,14 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
         }
       },
       new Label(app
-        , text = "Hi there :)"
-        , position = new Vector3f(app.getViewPort.getCamera.getWidth * .425f, app.getViewPort.getCamera.getHeight * .525f, -2f)
+        , text = "Hihi :)"
+        , position = new Vector3f(app.getViewPort.getCamera.getWidth * .425f, app.getViewPort.getCamera.getHeight, -2f)
       )
     )
   }
 
   def onAdd(node: Node) = {
-    parentNode.attachChild(node)
+    rootNode.attachChild(node)
   }
 
   def onDel(node: Node) = {

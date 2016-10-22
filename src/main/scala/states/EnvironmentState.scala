@@ -7,10 +7,15 @@ package states
 import com.jme3.app.Application
 import com.jme3.app.state.AppStateManager
 import com.jme3.asset.AssetManager
+import com.jme3.light.AmbientLight
+import com.jme3.math.ColorRGBA
 import com.jme3.scene.Node
 import com.jme3.util.SkyFactory
 
 class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
+
+  val ambientLight = new AmbientLight()
+  var lightAdded = false
 
   def onAdd(node: Node) = {
 
@@ -21,6 +26,7 @@ class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
   }
   def onInit(stateManager: AppStateManager, app: Application) = {
     loadSkybox("LW3D", app.getAssetManager)
+    setAmbientColor(ColorRGBA.White)
   }
 
   def onUpdate(node: Node, tpf: Float) = {
@@ -29,6 +35,14 @@ class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
 
   def onClean() = {
 
+  }
+
+  def setAmbientColor(color: ColorRGBA) = {
+    ambientLight.setColor(color)
+    if (!lightAdded) {
+      parentNode.addLight(ambientLight)
+      lightAdded = true
+    }
   }
 
   def loadSkybox(name: String, assetManager: AssetManager) = {

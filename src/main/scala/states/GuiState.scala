@@ -25,7 +25,7 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
         }
       },
       new Label(app
-        , text = "Hihi :)"
+        , text = "Hello world :)"
         , position = new Vector3f(app.getViewPort.getCamera.getWidth * .425f, app.getViewPort.getCamera.getHeight, -2f)
       )
     )

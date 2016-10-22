@@ -17,26 +17,30 @@ class Earth(app: Application) extends Node {
 
   val sphere = new Geometry("", new Sphere(256, 256, 100)) {
     setMaterial(
-      new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md") {
-        setBoolean("UseMaterialColors", true)
-        setFloat("Shininess", 8)
-        setColor("Ambient", ColorRGBA.White)
-        setTexture("DiffuseMap", assetManager.loadTexture("Earth/4096_earth.jpg"))
+      new Material(assetManager, "Shaders/PBRLighting.j3md") {
+        setFloat("Metallic", 0.1f)
+        setFloat("Roughness", 0.01f)
+        setColor("BaseColor", ColorRGBA.White)
+        setColor("Emissive", ColorRGBA.Yellow)
+        setFloat("EmissivePower", 3f)
+        setFloat("EmissiveIntensity", 0.25f)
+
+        setTexture("BaseColorMap", assetManager.loadTexture("Earth/4096_earth.jpg"))
         setTexture("NormalMap", assetManager.loadTexture("Earth/4096_normal.jpg"))
         setTexture("ParallaxMap", assetManager.loadTexture("Earth/4096_bump.jpg"))
-        setTexture("GlowMap", assetManager.loadTexture("Earth/4096_night_lights.jpg"))
+        setTexture("EmissiveMap", assetManager.loadTexture("Earth/4096_night_lights.jpg"))
 
 //        setQueueBucket(RenderQueue.Bucket.Translucent)
       }
     )
   }
 
-  val clouds = new Geometry("", new Sphere(256, 256, 100.2f)) {
+  val clouds = new Geometry("", new Sphere(256, 256, 100.9f)) {
     setMaterial(
       new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md") {
         setBoolean("UseMaterialColors", true)
-        setFloat("Shininess", 2)
-        setColor("Ambient", ColorRGBA.White)
+        setFloat("Shininess", 8)
+        setColor("Ambient", ColorRGBA.Black)
         setFloat("AlphaDiscardThreshold", 0.5882f)
         setColor("Diffuse", ColorRGBA.White) //new ColorRGBA(0.5882f, 0.5882f, 0.5882f, 1f))
         setTexture("DiffuseMap", assetManager.loadTexture("Earth/4096_clouds.jpg"))

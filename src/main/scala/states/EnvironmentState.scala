@@ -29,6 +29,7 @@ class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
     loadSkybox("LW3D", app.getAssetManager)
     setAmbientColor(ColorRGBA.White)
     parentNode.addLight(directionalLight)
+    app.getViewPort.setBackgroundColor(ColorRGBA.Green)
   }
 
   def onUpdate(node: Node, tpf: Float) = {

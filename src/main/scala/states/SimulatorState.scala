@@ -10,7 +10,7 @@ import com.jme3.input.ChaseCamera
 import com.jme3.input.controls.{KeyTrigger, MouseButtonTrigger}
 import com.jme3.math.FastMath
 import com.jme3.scene.Node
-import nodes.model.Earth
+import nodes.model.{Earth, Lantern}
 
 class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 
@@ -25,12 +25,12 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
   }
 
   def onInit(stateManager: AppStateManager, app: Application) = {
-    val planet = new Earth(app)
-    planet.setLocalTranslation(0, 0, 0)
-    planet.rotate(FastMath.PI/(-2), FastMath.PI, 0)
-    add(planet)
+    val model = new Lantern(app)
+    model.setLocalTranslation(0, -800, 0)
+//    model.rotate(FastMath.PI/(-2), FastMath.PI, 0)
+    add(model)
 
-    camera = new ChaseCamera(app.getCamera, planet, app.getInputManager)
+    camera = new ChaseCamera(app.getCamera, model, app.getInputManager)
 
     camera.setToggleRotationTrigger(
       new MouseButtonTrigger(InputControls.TOGGLE_ROTATION_MOUSE),
@@ -38,7 +38,7 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
     camera.setInvertVerticalAxis(true)
     camera.setTrailingEnabled(false)
     camera.setMinVerticalRotation(-1 * FastMath.PI / 2)
-    camera.setDefaultDistance(200)
+    camera.setDefaultDistance(300)
     camera.setMinDistance(5)
     camera.setMaxDistance(1000)
   }

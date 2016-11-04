@@ -6,7 +6,10 @@ package nodes.gui
 
 import com.jme3.app.Application
 import com.jme3.font.BitmapText
-import com.jme3.math.{ColorRGBA, FastMath, Quaternion, Vector3f}
+import com.jme3.math.ColorRGBA
+import com.jme3.math.FastMath
+import com.jme3.math.Quaternion
+import com.jme3.math.Vector3f
 import com.jme3.scene.Node
 import com.jme3.scene.Spatial.CullHint
 import helpers.ColorPalette
@@ -15,7 +18,7 @@ class Label(app: Application
             , name: String = "label"
             , text: String = ""
             , size: Float = 64
-            , color: ColorRGBA = ColorPalette.MainBright
+            , color: ColorRGBA = ColorPalette.MAIN_LIGHT
             , position: Vector3f = Vector3f.ZERO
             , rotation: Quaternion = Quaternion.DIRECTION_Z
            ) extends Node(name) {

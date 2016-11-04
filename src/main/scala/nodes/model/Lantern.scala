@@ -9,8 +9,7 @@ import com.jme3.material.Material
 import com.jme3.material.RenderState.BlendMode
 import com.jme3.math.ColorRGBA
 import com.jme3.renderer.queue.RenderQueue
-import com.jme3.scene.shape.Sphere
-import com.jme3.scene.{Geometry, Node}
+import com.jme3.scene.Node
 
 class Lantern(app: Application) extends Node {
   val assetManager = app.getAssetManager()

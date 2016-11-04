@@ -7,10 +7,11 @@ import app.InputControls
 import com.jme3.app.Application
 import com.jme3.app.state.AppStateManager
 import com.jme3.input.ChaseCamera
-import com.jme3.input.controls.{KeyTrigger, MouseButtonTrigger}
+import com.jme3.input.controls.MouseButtonTrigger
+import com.jme3.input.controls.KeyTrigger
 import com.jme3.math.FastMath
 import com.jme3.scene.Node
-import nodes.model.{Earth, Lantern}
+import nodes.model.Lantern
 
 class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 

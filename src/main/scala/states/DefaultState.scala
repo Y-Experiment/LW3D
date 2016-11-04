@@ -5,7 +5,8 @@
 package states
 
 import com.jme3.app.Application
-import com.jme3.app.state.{AppState, AppStateManager}
+import com.jme3.app.state.AppState
+import com.jme3.app.state.AppStateManager
 import com.jme3.renderer.RenderManager
 import com.jme3.scene.Node
 

@@ -17,6 +17,7 @@ class SfxState(parentNode: Node) extends DefaultState(parentNode) {
   def onDel(node: Node) = {
 
   }
+
   def onInit(stateManager: AppStateManager, app: Application) = {
 
   }

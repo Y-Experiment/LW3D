@@ -15,15 +15,16 @@ import com.jme3.scene.Spatial.CullHint
 import helpers.ColorPalette
 
 class Label(app: Application
-            , name: String = "label"
+            , id: String = "label"
             , text: String = ""
             , size: Float = 64
             , color: ColorRGBA = ColorPalette.MAIN_LIGHT
             , position: Vector3f = Vector3f.ZERO
             , rotation: Quaternion = Quaternion.DIRECTION_Z
-           ) extends Node(name) {
+            , font: String = "Fonts/Default/Default.fnt"
+           ) extends Node(id) {
   attachChild(
-    new BitmapText(app.getAssetManager.loadFont("Fonts/Default/Default.fnt"), false) {
+    new BitmapText(app.getAssetManager.loadFont(font), false) {
       setSize(size)
       setCullHint(CullHint.Never)
       setColor(color)

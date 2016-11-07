@@ -7,6 +7,6 @@ package nodes.gui
 import com.jme3.app.Application
 import com.jme3.scene.Node
 
-class Edit(app: Application, name: String = "edit") extends Node(name) {
+class Edit(app: Application, id: String = "edit") extends Node(id) {
 
 }

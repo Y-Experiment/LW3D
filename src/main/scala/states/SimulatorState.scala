@@ -12,6 +12,7 @@ import com.jme3.input.controls.MouseButtonTrigger
 import com.jme3.input.controls.KeyTrigger
 import com.jme3.math.FastMath
 import com.jme3.scene.Node
+import nodes.Factory
 import nodes.model.Earth
 import nodes.model.Generator
 
@@ -28,12 +29,12 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
   }
 
   def onInit(stateManager: AppStateManager, app: Application) = {
-    val model = new Earth(app)
+    val model = Factory[Earth](app)
     model.setLocalTranslation(-300, -300, 300)
     model.rotate(FastMath.PI/(-2), FastMath.PI, 0)
     add(model)
 
-    val generator = Generator(app)
+    val generator = Factory[Generator](app)
     generator.setLocalTranslation(0, 0, 0)
 
     add(generator)

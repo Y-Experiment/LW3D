@@ -11,15 +11,16 @@ import com.jme3.math.ColorRGBA
 import com.jme3.math.Vector3f
 import com.jme3.scene.Spatial.CullHint
 import com.jme3.scene.shape.Quad
-import com.jme3.scene.{Geometry, Node}
+import com.jme3.scene.Geometry
+import com.jme3.scene.Node
 import helpers.ColorPalette
 
 class Panel(app: Application,
-            name: String = "panel",
+            id: String = "panel",
             width: Float = 100,
             height: Float = 100,
             position: Vector3f = Vector3f.ZERO,
-            color: ColorRGBA = ColorPalette.SECOND_DARK.mult(new ColorRGBA(1,1,1,0.5f))) extends Node(name) {
+            color: ColorRGBA = ColorPalette.SECOND_DARK.mult(new ColorRGBA(1,1,1,0.5f))) extends Node(id) {
   attachChild(
     new Geometry("QuadOf"+getName, new Quad(width, height)) {
       setMaterial(

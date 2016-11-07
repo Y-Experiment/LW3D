@@ -7,8 +7,8 @@ package nodes.gui
 import com.jme3.app.Application
 import com.jme3.scene.Node
 
-class Button(app: Application, name: String = "button") extends Node(name) {
-  def onClick() = {
+class Button(app: Application, id: String = "button") extends Node(id) {
+  def onClick(): Unit = {
 
   }
 }

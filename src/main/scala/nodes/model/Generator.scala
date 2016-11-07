@@ -9,17 +9,6 @@ import com.jme3.material.Material
 import com.jme3.math.ColorRGBA
 import com.jme3.scene.Node
 
-object Generator {
-  var count = 0
-
-  def apply(app: Application, id: String = ""): Generator = {
-    if (id.isEmpty) {
-      count += 1
-      new Generator(app, "gen-" + count)
-    } else new Generator(app, id)
-  }
-}
-
 class Generator(app: Application, id: String) extends Node(id) {
   val assetManager = app.getAssetManager()
 

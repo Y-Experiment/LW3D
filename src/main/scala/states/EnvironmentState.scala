@@ -20,25 +20,25 @@ class EnvironmentState(parentNode: Node) extends DefaultState(parentNode) {
   val directionalLight = new DirectionalLight(Vector3f.UNIT_Z, ColorRGBA.White)
   var lightAdded = false
 
-  def onAdd(node: Node) = {
+  def onAdd(node: Node): Unit = {
 
   }
 
-  def onDel(node: Node) = {
+  def onDel(node: Node): Unit = {
 
   }
-  def onInit(stateManager: AppStateManager, app: Application) = {
+  def onInit(stateManager: AppStateManager, app: Application): Unit = {
     loadSkybox("LW3D", app.getAssetManager)
     setAmbientColor(ColorRGBA.White)
     parentNode.addLight(directionalLight)
     app.getViewPort.setBackgroundColor(ColorRGBA.Green)
   }
 
-  def onUpdate(node: Node, tpf: Float) = {
+  def onUpdate(node: Node, tpf: Float): Unit = {
 
   }
 
-  def onClean() = {
+  def onClean(): Unit = {
 
   }
 

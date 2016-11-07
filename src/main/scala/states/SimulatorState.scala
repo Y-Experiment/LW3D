@@ -20,15 +20,15 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 
   var camera: ChaseCamera = _
 
-  def onAdd(node: Node) = {
+  def onAdd(node: Node): Unit = {
     rootNode.attachChild(node)
   }
 
-  def onDel(node: Node) = {
+  def onDel(node: Node): Unit = {
 
   }
 
-  def onInit(stateManager: AppStateManager, app: Application) = {
+  def onInit(stateManager: AppStateManager, app: Application): Unit = {
     val model = Factory[Earth](app)
     model.setLocalTranslation(-300, -300, 300)
     model.rotate(FastMath.PI/(-2), FastMath.PI, 0)
@@ -54,11 +54,11 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
     }
   }
 
-  def onUpdate(node: Node, tpf: Float) = {
+  def onUpdate(node: Node, tpf: Float): Unit = {
 
   }
 
-  def onClean() = {
+  def onClean(): Unit = {
 
   }
 }

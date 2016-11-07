@@ -31,22 +31,22 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
     )
   }
 
-  def onAdd(node: Node) = {
+  def onAdd(node: Node): Unit = {
     rootNode.attachChild(node)
   }
 
-  def onDel(node: Node) = {
+  def onDel(node: Node): Unit = {
 
   }
-  def onInit(stateManager: AppStateManager, app: Application) = {
-
-  }
-
-  def onUpdate(node: Node, tpf: Float) = {
+  def onInit(stateManager: AppStateManager, app: Application): Unit = {
 
   }
 
-  def onClean() = {
+  def onUpdate(node: Node, tpf: Float): Unit = {
+
+  }
+
+  def onClean(): Unit = {
 
   }
 

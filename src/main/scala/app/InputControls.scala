@@ -4,7 +4,8 @@
 
 package app
 
-import com.jme3.input.{KeyInput, MouseInput}
+import com.jme3.input.MouseInput
+import com.jme3.input.KeyInput
 
 object InputControls {
   val KEY_HUD_TOGGLE      = KeyInput.KEY_GRAVE

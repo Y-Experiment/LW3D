@@ -13,11 +13,11 @@ import com.jme3.input.controls.KeyTrigger
 import com.jme3.math.FastMath
 import com.jme3.scene.Node
 import nodes.model.Earth
-import nodes.model.Lantern
+import nodes.model.Generator
 
 class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
 
-  var camera: ChaseCamera = null
+  var camera: ChaseCamera = _
 
   def onAdd(node: Node) = {
     rootNode.attachChild(node)
@@ -28,22 +28,29 @@ class SimulatorState(parentNode: Node) extends DefaultState(parentNode) {
   }
 
   def onInit(stateManager: AppStateManager, app: Application) = {
-    val model = new Lantern(app)
-    model.setLocalTranslation(0, -800, 0)
-//    model.rotate(FastMath.PI/(-2), FastMath.PI, 0)
+    val model = new Earth(app)
+    model.setLocalTranslation(-300, -300, 300)
+    model.rotate(FastMath.PI/(-2), FastMath.PI, 0)
     add(model)
 
-    camera = new ChaseCamera(app.getCamera, rootNode, app.getInputManager)
+    val generator = Generator(app)
+    generator.setLocalTranslation(0, 0, 0)
+
+    add(generator)
+
     app.getCamera.setFrustumFar(100000f)
-    camera.setToggleRotationTrigger(
-      new MouseButtonTrigger(InputControls.TOGGLE_ROTATION_MOUSE),
-      new KeyTrigger(InputControls.TOGGLE_ROTATION_KEY))
-    camera.setInvertVerticalAxis(Properties.Camera.invertVerticalAxis)
-    camera.setTrailingEnabled(Properties.Camera.trailingEnabled)
-    camera.setMinVerticalRotation(Properties.Camera.minVerticalRotation)
-    camera.setDefaultDistance(Properties.Camera.defaultDistance)
-    camera.setMinDistance(Properties.Camera.minDistance)
-    camera.setMaxDistance(Properties.Camera.maxDistance)
+
+    camera = new ChaseCamera(app.getCamera, rootNode, app.getInputManager) {
+      setToggleRotationTrigger(
+        new MouseButtonTrigger(InputControls.TOGGLE_ROTATION_MOUSE),
+        new KeyTrigger(InputControls.TOGGLE_ROTATION_KEY))
+      setInvertVerticalAxis(Properties.Camera.invertVerticalAxis)
+      setTrailingEnabled(Properties.Camera.trailingEnabled)
+      setMinVerticalRotation(Properties.Camera.minVerticalRotation)
+      setDefaultDistance(Properties.Camera.defaultDistance)
+      setMinDistance(Properties.Camera.minDistance)
+      setMaxDistance(Properties.Camera.maxDistance)
+    }
   }
 
   def onUpdate(node: Node, tpf: Float) = {

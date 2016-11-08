@@ -9,7 +9,7 @@ import com.jme3.material.Material
 import com.jme3.math.ColorRGBA
 import com.jme3.scene.Node
 
-class Generator(app: Application, id: String) extends Node(id) {
+class Generator(app: Application) extends Node("generator") {
   val assetManager = app.getAssetManager()
 
   val model = assetManager.loadModel("Generator/power-gen.j3o")

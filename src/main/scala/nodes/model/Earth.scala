@@ -11,7 +11,7 @@ import com.jme3.scene.Node
 import com.jme3.scene.Geometry
 import com.jme3.scene.shape.Sphere
 
-class Earth(app: Application) extends Node {
+class Earth(app: Application) extends Node("earth") {
   val assetManager = app.getAssetManager()
 
   val sphere = new Geometry("", new Sphere(256, 256, 100)) {

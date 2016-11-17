@@ -25,5 +25,6 @@ LW3D.iws
 
 # LW3D specific
 *.dll
+*.so
 lib/*/
 

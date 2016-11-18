@@ -16,7 +16,7 @@ object ColorPalette {
   val SECOND_LIGHT = new ColorRGBA(.475f, .525f, .675f, 1f)
   val SECOND_DARK = new ColorRGBA(.024f, .078f, .224f, 1f)
 
-  val HIGH_COLOR = new ColorRGBA(.667f, .247f, .224f, .1f)
+  val HIGH_COLOR = new ColorRGBA(.667f, .247f, .224f, 1f)
   val HIGH_LIGHT = new ColorRGBA(1f, .682f, .667f, 1f)
   val HIGH_DARK = new ColorRGBA(.333f, .016f, 0f, 1f)
 

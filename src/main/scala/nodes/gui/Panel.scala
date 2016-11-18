@@ -22,7 +22,7 @@ class Panel(app: Application,
             position: Vector3f = Vector3f.ZERO,
             color: ColorRGBA = ColorPalette.SECOND_DARK.mult(new ColorRGBA(1,1,1,0.5f))) extends Node(id) {
   attachChild(
-    new Geometry("QuadOf"+getName, new Quad(width, height)) {
+    new Geometry("QuadOf"+id, new Quad(width, height)) {
       setMaterial(
         new Material(app.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md") {
           setColor("Color", color)

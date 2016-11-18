@@ -6,6 +6,7 @@ package states
 
 import com.jme3.app.Application
 import com.jme3.app.state.AppStateManager
+import com.jme3.font.BitmapFont
 import com.jme3.math.Vector3f
 import com.jme3.scene.Node
 import nodes.gui
@@ -19,14 +20,21 @@ class GuiState(parentNode: Node) extends DefaultState(parentNode) {
         , height = app.getViewPort.getCamera.getHeight / 12
         , position = new Vector3f(0, app.getViewPort.getCamera.getHeight * 11/12, -2f)
       ),
-      new gui.Button(app) {
+      new gui.Button(app
+        , id = "BtnRest"
+        , text = "Reset"
+        , position = new Vector3f(0, app.getViewPort.getCamera.getHeight * 10/12, -2f)
+      ) {
         override def onClick = {
 
         }
       },
       new gui.Label(app
-        , text = "Hello world :)"
-        , position = new Vector3f(app.getViewPort.getCamera.getWidth * .425f, app.getViewPort.getCamera.getHeight, -2f)
+        , text = "LightWeight 3D"
+        , position = new Vector3f(0, app.getViewPort.getCamera.getHeight * 11/12, -2f)
+        , width = app.getViewPort.getCamera.getWidth
+        , height = app.getViewPort.getCamera.getHeight / 12
+        , alignHorizontal = BitmapFont.Align.Center
       )
     )
   }
